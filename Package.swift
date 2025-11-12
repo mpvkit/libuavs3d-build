@@ -20,8 +20,8 @@ let package = Package(
 
         .binaryTarget(
             name: "Libuavs3d",
-            url: "https://github.com/mpvkit/libuavs3d-build/releases/download/1.2.1/Libuavs3d.xcframework.zip",
-            checksum: "893257fc73c61b87fb45ee9de7df6ac4a6967062d7cac2c8d136cd2774a04971"
+            url: "https://github.com/mpvkit/libuavs3d-build/releases/download/1.2.1-xcode26/Libuavs3d.xcframework.zip",
+            checksum: "df6b44a1a9441b16d1a2983511ca808f924e05a653422eeabc46b37220dc5f10"
         ),
         //AUTO_GENERATE_TARGETS_END//
     ]
