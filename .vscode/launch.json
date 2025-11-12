@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:libuavs3d-build}/Sources/BuildScripts",
+            "name": "Debug build (Sources/BuildScripts)",
+            "target": "build",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug build (Sources/BuildScripts)"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:libuavs3d-build}/Sources/BuildScripts",
+            "name": "Release build (Sources/BuildScripts)",
+            "target": "build",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release build (Sources/BuildScripts)"
+        }
+    ]
+}
