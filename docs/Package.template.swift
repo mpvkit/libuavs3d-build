@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "libuavs3d",
-    platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13)],
+    platforms: [.macOS(.v11), .iOS(.v14), .tvOS(.v14)],
     products: [
         .library(name: "Libuavs3d", targets: ["_Libuavs3d"]),
     ],
