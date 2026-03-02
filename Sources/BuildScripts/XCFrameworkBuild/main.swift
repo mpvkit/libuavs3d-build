@@ -30,11 +30,12 @@ enum Library: String, CaseIterable, BuildLibrary {
     var targets : [PackageTarget] {
         switch self {
         case .libuavs3d:
+            let releaseVersion = BuildRunner.options?.releaseVersion ?? version
             return  [
                 .target(
                     name: "Libuavs3d",
-                    url: "https://github.com/mpvkit/libuavs3d-build/releases/download/\(BuildRunner.options!.releaseVersion)/Libuavs3d.xcframework.zip",
-                    checksum: "https://github.com/mpvkit/libuavs3d-build/releases/download/\(BuildRunner.options!.releaseVersion)/Libuavs3d.xcframework.checksum.txt"
+                    url: "https://github.com/mpvkit/libuavs3d-build/releases/download/\(releaseVersion)/Libuavs3d.xcframework.zip",
+                    checksum: "https://github.com/mpvkit/libuavs3d-build/releases/download/\(releaseVersion)/Libuavs3d.xcframework.checksum.txt"
                 ),
             ]
         }
