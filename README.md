@@ -2,6 +2,8 @@
 
 build scripts for [uavs3d](https://github.com/uavs3/uavs3d)
 
+> This is a component of the [MPVKit](https://github.com/mpvkit/MPVKit) project.
+
 ## Installation
 
 ### Swift Package Manager

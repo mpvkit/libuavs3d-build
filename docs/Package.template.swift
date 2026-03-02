@@ -6,7 +6,10 @@ let package = Package(
     name: "libuavs3d",
     platforms: [.macOS(.v11), .iOS(.v14), .tvOS(.v14)],
     products: [
-        .library(name: "Libuavs3d", targets: ["_Libuavs3d"]),
+        .library(
+            name: "Libuavs3d",
+            targets: ["_Libuavs3d"]
+        ),
     ],
     targets: [
         // Need a dummy target to embedded correctly.

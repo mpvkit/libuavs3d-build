@@ -1,17 +1,16 @@
 import Foundation
+import BuildShared
 
 do {
-    let options = try ArgumentOptions.parse(CommandLine.arguments)
-    try Build.performCommand(options)
-
-    try BuildUavs3d().buildALL()
+    let options = try BuildRunner.performCommand()
+    try BuildUavs3d(options: options).buildALL()
 } catch {
-    print("ERROR: \(error.localizedDescription)")
+    print(error.localizedDescription)
     exit(1)
 }
 
 
-enum Library: String, CaseIterable {
+enum Library: String, CaseIterable, BuildLibrary {
     case libuavs3d
     var version: String {
         switch self {
@@ -31,11 +30,12 @@ enum Library: String, CaseIterable {
     var targets : [PackageTarget] {
         switch self {
         case .libuavs3d:
+            let releaseVersion = BuildRunner.options?.releaseVersion ?? version
             return  [
                 .target(
                     name: "Libuavs3d",
-                    url: "https://github.com/mpvkit/libuavs3d-build/releases/download/\(BaseBuild.options.releaseVersion)/Libuavs3d.xcframework.zip",
-                    checksum: "https://github.com/mpvkit/libuavs3d-build/releases/download/\(BaseBuild.options.releaseVersion)/Libuavs3d.xcframework.checksum.txt"
+                    url: "https://github.com/mpvkit/libuavs3d-build/releases/download/\(releaseVersion)/Libuavs3d.xcframework.zip",
+                    checksum: "https://github.com/mpvkit/libuavs3d-build/releases/download/\(releaseVersion)/Libuavs3d.xcframework.checksum.txt"
                 ),
             ]
         }
@@ -44,8 +44,8 @@ enum Library: String, CaseIterable {
 
 
 private class BuildUavs3d: BaseBuild {
-    init() {
-        super.init(library: .libuavs3d)
+    init(options: ArgumentOptions) {
+        super.init(library: Library.libuavs3d, options: options)
 
         // force pull latest version from master/main branch
         self.pullLatestVersion = true
@@ -73,4 +73,3 @@ private class BuildUavs3d: BaseBuild {
         ]
     }
 }
-
