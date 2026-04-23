@@ -4,9 +4,12 @@ import PackageDescription
 
 let package = Package(
     name: "libuavs3d",
-    platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13)],
+    platforms: [.macOS(.v11), .iOS(.v14), .tvOS(.v14)],
     products: [
-        .library(name: "Libuavs3d", targets: ["_Libuavs3d"]),
+        .library(
+            name: "Libuavs3d",
+            targets: ["_Libuavs3d"]
+        ),
     ],
     targets: [
         // Need a dummy target to embedded correctly.
@@ -20,8 +23,8 @@ let package = Package(
 
         .binaryTarget(
             name: "Libuavs3d",
-            url: "https://github.com/mpvkit/libuavs3d-build/releases/download/1.2.1-xcode/Libuavs3d.xcframework.zip",
-            checksum: "acfc5b7ca2a6bc4b84d60f8be1d67bbbe3a72807f33bb12871d5ea5a04977d02"
+            url: "https://github.com/mpvkit/libuavs3d-build/releases/download/1.0.0/Libuavs3d.xcframework.zip",
+            checksum: "beb74c7447a1d5bebf2b38bbd9f24a455cb36444dc2a8b896ddb2354565413ab"
         ),
         //AUTO_GENERATE_TARGETS_END//
     ]
