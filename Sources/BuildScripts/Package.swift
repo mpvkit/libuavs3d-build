@@ -16,7 +16,6 @@ let package = Package(
             name: "build",
             dependencies: ["BuildShared"],
             path: "XCFrameworkBuild",
-            exclude: ["base.swift"],
             sources: ["main.swift"]
         )
     ]
