@@ -59,10 +59,10 @@ private class BuildUavs3d: BaseBuild {
     }
 
     override func build(platform: PlatformType, arch: ArchType) throws {
-        // maccatalyst暂时不支持
-        if platform == .maccatalyst {
-            return
-        }
+        // // maccatalyst暂时不支持
+        // if platform == .maccatalyst {
+        //     return
+        // }
 
         try super.build(platform: platform, arch: arch)
     }

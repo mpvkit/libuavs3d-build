@@ -18,8 +18,12 @@ https://github.com/mpvkit/libuavs3d-build.git
 
 ```bash
 make build
-# or build specified platforms 
+# specified platforms (ios,macos,tvos,tvsimulator,isimulator,maccatalyst,xros,xrsimulator)
 make build platform=ios,macos
-# or see help
+# build GPL version
+make build enable-gpl
+# clean all build temp files and cache
+make clean
+# see help
 make help
 ```
