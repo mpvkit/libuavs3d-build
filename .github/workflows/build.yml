@@ -17,3 +17,5 @@ jobs:
     with:
       version: '${{ github.event.inputs.version }}'
       library: 'libuavs3d'
+      # GitHub retired the macOS 14 runner images on 2026-11-02
+      macos_15: true
