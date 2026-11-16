@@ -15,7 +15,7 @@ enum Library: String, CaseIterable, BuildLibrary {
     var version: String {
         switch self {
         case .libuavs3d:
-            return "1.0"
+            return "1.2"
         }
     }
 
@@ -45,10 +45,8 @@ enum Library: String, CaseIterable, BuildLibrary {
 
 private class BuildUavs3d: BaseBuild {
     init(options: ArgumentOptions) {
+        // pin to the released tag (library.version) instead of master HEAD
         super.init(library: Library.libuavs3d, options: options)
-
-        // force pull latest version from master/main branch
-        self.pullLatestVersion = true
     }
 
     override func beforeBuild() throws {
